@@ -8,39 +8,11 @@
 </div>
 
 <div class="side-bar-main">
-  <div class="side-bar-rooms">
-    <div class="room">
-      <a href="#">Techroom1</a>
+  <% current_user.rooms.each do |room| %>
+    <div class="side-bar-rooms">
+      <div class="room">
+        <a href="#"><%= room.name %></a>
+      </div>
     </div>
-  </div>
-  <div class="side-bar-rooms">
-    <div class="room">
-      <a href="#">Techroom2</a>
-    </div>
-  </div>
-  <div class="side-bar-rooms">
-    <div class="room">
-      <a href="#">Techroom3</a>
-    </div>
-  </div>
-  <div class="side-bar-rooms">
-    <div class="room">
-      <a href="#">Techroom4</a>
-    </div>
-  </div>
-  <div class="side-bar-rooms">
-    <div class="room">
-      <a href="#">Techroom5</a>
-    </div>
-  </div>
-  <div class="side-bar-rooms">
-    <div class="room">
-      <a href="#">Techroom6</a>
-    </div>
-  </div>
-  <div class="side-bar-rooms">
-    <div class="room">
-      <a href="#">Techroom7</a>
-    </div>
-  </div>
+  <% end %>
 </div>
