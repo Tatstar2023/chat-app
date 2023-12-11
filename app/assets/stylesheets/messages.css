@@ -24,13 +24,13 @@
   align-items: center;
 }
 
-.user-name {
+.user-name a {
   color: #FAFAFA;
   font-size: 16px;
   text-decoration: none;
 }
 
-.create-chat {
+.create-chat a {
   color: deepskyblue;
   font-size: 10px;
   border: 1px solid lightblue;
