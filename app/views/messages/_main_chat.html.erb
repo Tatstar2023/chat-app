@@ -10,34 +10,16 @@
 </div>
 
 <div class="chat-main">
-  <div class="messages">
-    <div class="username-and-time">
-      <div class="username">Tom</div>
-      <div class="time">2023/12/10(Sun) 17:26:00</div>
-    </div>
-    <div class="lower-message">
-      <div class="message">おはよう</div>
-    </div>
-  </div>
-  <div class="messages">
-    <div class="username-and-time">
-      <div class="username">Sam</div>
-      <div class="time">2023/12/10(Sun) 18:26:00</div>
-    </div>
-    <div class="lower-message">
-      <div class="message">おやすみ</div>
-    </div>
-  </div>
+  <%= render partial: 'message', collection: @messages %>
 </div>
 
-<div class="chat-form">
+<%= form_with model: [@room, @message], class: 'chat-form', local: true do |f| %>
   <div class="form-input">
-    <input placeholder="type a message" class="input-text">
+    <%= f.text_field :content, class: 'input-text', placeholder: 'type a message' %>
     <label class="form-image">
       <span class="image-file">画像</span>
-      <input type="file" class="hidden">
+      <%= f.file_field :image, class: 'hidden' %>
     </label>
   </div>
-  <input type="submit" class="form-submit" vaule="送信">
-  </div>
-</div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
